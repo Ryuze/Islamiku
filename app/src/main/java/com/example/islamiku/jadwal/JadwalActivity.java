@@ -12,6 +12,5 @@ public class JadwalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jadwal);
-        getSupportActionBar().setTitle("Jadwal Sholat");
     }
 }
