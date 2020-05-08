@@ -65,7 +65,7 @@ public class JadwalActivity extends AppCompatActivity {
                 tanggal.setText(response.body().getJadwal().getData().getTanggal());
                 subuh.setText("Subuh " + response.body().getJadwal().getData().getSubuh());
                 dzuhur.setText("Dzuhur " +response.body().getJadwal().getData().getDzuhur());
-                ashar.setText("Ashar " +response.body().getJadwal().getData().getDzuhur());
+                ashar.setText("Ashar " +response.body().getJadwal().getData().getAshar());
                 maghrib.setText("Maghrib " +response.body().getJadwal().getData().getMaghrib());
                 isya.setText("Isya " +response.body().getJadwal().getData().getIsya());
 
