@@ -22,6 +22,7 @@ public class Data {
     @SerializedName("isya")
     @Expose
     private String isya;
+    private String tanggal;
 
     public String getJadwal() {
         return jadwal;
@@ -71,6 +72,14 @@ public class Data {
         this.isya = isya;
     }
 
+    public String getTanggal() {
+        return tanggal;
+    }
+
+    public void setTanggal(String tanggal) {
+        this.tanggal = tanggal;
+    }
+
     @Override
     public String toString() {
         return "Data{" +
@@ -80,6 +89,7 @@ public class Data {
                 ", ashar='" + ashar + '\'' +
                 ", maghrib='" + maghrib + '\'' +
                 ", isya='" + isya + '\'' +
+                ", tanggal='" + tanggal + '\'' +
                 '}';
     }
 }
