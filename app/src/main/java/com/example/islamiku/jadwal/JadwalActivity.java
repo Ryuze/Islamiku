@@ -3,7 +3,10 @@ package com.example.islamiku.jadwal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.AlarmClock;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,12 +48,14 @@ public class JadwalActivity extends AppCompatActivity {
                 .build();
 
         jadwalApi = retrofit.create(JadwalApi.class);
+
         getJadwal();
     }
 
     private void getJadwal() {
         SimpleDateFormat currentDate = new SimpleDateFormat("YYYY-MM-dd", Locale.US);
         String jadwal = currentDate.format(new Date());
+
 
         Call<Feed> call = jadwalApi.getData(jadwal);
 
@@ -63,6 +68,61 @@ public class JadwalActivity extends AppCompatActivity {
                 ashar.setText("Ashar " +response.body().getJadwal().getData().getDzuhur());
                 maghrib.setText("Maghrib " +response.body().getJadwal().getData().getMaghrib());
                 isya.setText("Isya " +response.body().getJadwal().getData().getIsya());
+
+                subuh.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String[] tmp = response.body().getJadwal().getData().getSubuh().split(":");
+                        Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
+                        intent.putExtra(AlarmClock.EXTRA_HOUR, Integer.parseInt(tmp[0]));
+                        intent.putExtra(AlarmClock.EXTRA_MINUTES, Integer.parseInt(tmp[1]));
+                        startActivity(intent);
+                    }
+                });
+
+                dzuhur.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String[] tmp = response.body().getJadwal().getData().getDzuhur().split(":");
+                        Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
+                        intent.putExtra(AlarmClock.EXTRA_HOUR, Integer.parseInt(tmp[0]));
+                        intent.putExtra(AlarmClock.EXTRA_MINUTES, Integer.parseInt(tmp[1]));
+                        startActivity(intent);
+                    }
+                });
+
+                ashar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String[] tmp = response.body().getJadwal().getData().getAshar().split(":");
+                        Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
+                        intent.putExtra(AlarmClock.EXTRA_HOUR, Integer.parseInt(tmp[0]));
+                        intent.putExtra(AlarmClock.EXTRA_MINUTES, Integer.parseInt(tmp[1]));
+                        startActivity(intent);
+                    }
+                });
+
+                maghrib.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String[] tmp = response.body().getJadwal().getData().getMaghrib().split(":");
+                        Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
+                        intent.putExtra(AlarmClock.EXTRA_HOUR, Integer.parseInt(tmp[0]));
+                        intent.putExtra(AlarmClock.EXTRA_MINUTES, Integer.parseInt(tmp[1]));
+                        startActivity(intent);
+                    }
+                });
+
+                isya.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String[] tmp = response.body().getJadwal().getData().getIsya().split(":");
+                        Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
+                        intent.putExtra(AlarmClock.EXTRA_HOUR, Integer.parseInt(tmp[0]));
+                        intent.putExtra(AlarmClock.EXTRA_MINUTES, Integer.parseInt(tmp[1]));
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override
