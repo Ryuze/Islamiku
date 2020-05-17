@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button BtnJadwal = findViewById(R.id.jadwal);
         BtnJadwal.setOnClickListener(this);
+
+        Button BtnCerpen = findViewById(R.id.cerpen);
+        BtnCerpen.setOnClickListener(this);
     }
 
 
@@ -28,6 +31,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.jadwal:
                 Intent jadwalIntent = new Intent(MainActivity.this, JadwalActivity.class);
                 startActivity(jadwalIntent);
+                break;
+            case R.id.cerpen:
+                Intent cerpenIntent = new Intent(MainActivity.this, CerpenActivity.class);
+                startActivity(cerpenIntent);
                 break;
         }
     }
