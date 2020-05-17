@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">Islamiku</string>
     <string name="jadwal_sholat">Jadwal Sholat</string>
+    <string name="cerita_nabi">Kisah Nabi</string>
     <string name="subuh">Subuh</string>
     <string name="dzuhur">Dzuhur</string>
     <string name="ashar">Ashar</string>
     <string name="maghrib">Maghrib</string>
     <string name="isya">Isya</string>
     <string name="tanggal">Tanggal</string>
+    <string name="nabi_adam">Kisah Nabi Adam A.S</string>
+    <string name="nabi_idris">Kisah Nabi Idris A.S</string>
 </resources>

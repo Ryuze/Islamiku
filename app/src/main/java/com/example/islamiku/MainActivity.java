@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.islamiku.cerpen.CerpenActivity;
 import com.example.islamiku.jadwal.JadwalActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
