@@ -15,6 +15,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".jadwal.JadwalActivity"></activity>
         <activity android:name=".cerpen.CerpenActivity"></activity>
+        <activity android:name=".dzikir.DzikirActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
