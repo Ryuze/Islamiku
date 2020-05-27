@@ -26,7 +26,8 @@
             android:onClick="subhanallah"
             app:cardBackgroundColor="@android:color/holo_red_light"
             app:cardCornerRadius="8dp"
-            tools:ignore="OnClick">
+            tools:ignore="OnClick"
+            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -71,7 +72,8 @@
             android:onClick="alhamdulillah"
             app:cardBackgroundColor="@android:color/holo_orange_light"
             app:cardCornerRadius="8dp"
-            tools:ignore="OnClick">
+            tools:ignore="OnClick"
+            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -125,7 +127,8 @@
             android:onClick="lailahaillallah"
             app:cardBackgroundColor="@android:color/holo_green_light"
             app:cardCornerRadius="8dp"
-            tools:ignore="OnClick">
+            tools:ignore="OnClick"
+            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -170,7 +173,8 @@
             android:onClick="allahuakbar"
             app:cardBackgroundColor="@android:color/holo_blue_light"
             app:cardCornerRadius="8dp"
-            tools:ignore="OnClick">
+            tools:ignore="OnClick"
+            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -223,7 +227,8 @@
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@android:color/holo_purple"
-            app:cardCornerRadius="8dp">
+            app:cardCornerRadius="8dp"
+            android:focusable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
