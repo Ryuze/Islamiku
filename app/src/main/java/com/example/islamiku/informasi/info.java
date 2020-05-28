@@ -3,6 +3,7 @@ package com.example.islamiku.informasi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import com.example.islamiku.R;
 
 public class info extends AppCompatActivity {
 
