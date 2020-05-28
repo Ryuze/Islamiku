@@ -13,9 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".jadwal.JadwalActivity"></activity>
-        <activity android:name=".cerpen.CerpenActivity"></activity>
-        <activity android:name=".dzikir.DzikirActivity"></activity>
+        <activity android:name=".informasi.info"></activity>
+        <activity android:name=".jadwal.JadwalActivity" />
+        <activity android:name=".cerpen.CerpenActivity" />
+        <activity android:name=".dzikir.DzikirActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
