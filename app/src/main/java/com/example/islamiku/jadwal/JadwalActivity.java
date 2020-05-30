@@ -1,18 +1,25 @@
 package com.example.islamiku.jadwal;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.AlarmClock;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.islamiku.JadwalApi;
+import com.example.islamiku.MainActivity;
 import com.example.islamiku.R;
+import com.example.islamiku.cerpen.CerpenActivity;
+import com.example.islamiku.dzikir.DzikirActivity;
+import com.example.islamiku.informasi.InfoActivity;
 import com.example.islamiku.model.Feed;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -34,6 +41,35 @@ public class JadwalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jadwal);
+
+//        inisialisasi dan set variable
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
+
+//        set selected
+        bottomNavigationView.setSelectedItemId(R.id.btmJadwalSholat);
+
+//        itemselectlistener
+        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.btmDzikir:
+                        startActivity(new Intent(getApplicationContext(), DzikirActivity.class));
+                        break;
+                    case R.id.btmHome:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        break;
+                    case R.id.btmJadwalSholat:
+                        break;
+                    case R.id.btmCeritaNabi:
+                        startActivity(new Intent(getApplicationContext(), CerpenActivity.class));
+                        break;
+                    case R.id.btmTentang:
+                        startActivity(new Intent(getApplicationContext(), InfoActivity.class));
+                        break;
+                }
+            }
+        });
 
         tanggal = findViewById(R.id.tanggal);
         subuh = findViewById(R.id.subuh);

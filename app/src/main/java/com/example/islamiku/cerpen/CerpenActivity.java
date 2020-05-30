@@ -1,5 +1,6 @@
 package com.example.islamiku.cerpen;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,8 +20,13 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.islamiku.MainActivity;
 import com.example.islamiku.R;
+import com.example.islamiku.dzikir.DzikirActivity;
+import com.example.islamiku.informasi.InfoActivity;
+import com.example.islamiku.jadwal.JadwalActivity;
 import com.example.islamiku.model.ModelCerpen;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class CerpenActivity extends AppCompatActivity implements MainAdapter.onSelectData {
 
@@ -32,6 +38,35 @@ public class CerpenActivity extends AppCompatActivity implements MainAdapter.onS
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cerpen);
+
+//        inisialisasi dan set variable
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
+
+//        set selected
+        bottomNavigationView.setSelectedItemId(R.id.btmCeritaNabi);
+
+//        itemselectlistener
+        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.btmDzikir:
+                        startActivity(new Intent(getApplicationContext(), DzikirActivity.class));
+                        break;
+                    case R.id.btmHome:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        break;
+                    case R.id.btmJadwalSholat:
+                        startActivity(new Intent(getApplicationContext(), JadwalActivity.class));
+                        break;
+                    case R.id.btmCeritaNabi:
+                        break;
+                    case R.id.btmTentang:
+                        startActivity(new Intent(getApplicationContext(), InfoActivity.class));
+                        break;
+                }
+            }
+        });
 
         rvList = findViewById(R.id.rcview);
         rvList.setHasFixedSize(true);
