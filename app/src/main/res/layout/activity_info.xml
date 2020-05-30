@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,36 +7,79 @@
     android:background="#33CCFF"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="379dp"
-        android:layout_height="143dp"
-        android:textAlignment="center"
-        android:text="Islamiku merupakan aplikasi yang dirancang untuk membantu Anda dalam beribadah. Islamiku dilengkapi fitur Jadwal Sholat, Dzikir dan Cerita Nabi. Perancang aplikasi ini merupakan mahasiswa Teknik Informatika Universitas Singaperbangsa Karawang"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
 
-    <ImageView
-        android:layout_width="189dp"
-        android:layout_height="142dp"
-        android:src="@drawable/logo"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="90dp" />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:background="@android:color/white"
+            app:itemTextColor="@drawable/color_state"
+            app:itemIconTint="@drawable/color_state"
+            app:labelVisibilityMode="unlabeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/bottom_menu"/>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:background="@android:color/white"
-        app:itemTextColor="@drawable/color_state"
-        app:itemIconTint="@drawable/color_state"
-        app:labelVisibilityMode="unlabeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_menu"/>
+        <ImageView
+            android:id="@+id/header"
+            android:layout_width="284dp"
+            android:layout_height="157dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/logo"
+            android:contentDescription="@string/title_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </ImageView>
+
+        <TextView
+            android:id="@+id/des"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="224dp"
+            android:layout_marginBottom="57dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="sans-serif"
+            android:text="Islamiku merupakan aplikasi yang dirancang untuk membantu Anda dalam beribadah. Islamiku dilengkapi fitur Jadwal Sholat, Dzikir dan Cerita Nabi. Perancang aplikasi ini merupakan mahasiswa Teknik Informatika Universitas Singaperbangsa Karawang"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/cerpen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+        </TextView>
+
+        <TextView
+            android:id="@+id/anggta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="430dp"
+            android:layout_marginBottom="57dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="sans-serif"
+            android:text="Kelompok 4 \n \n Silvana Fitria Mandang (1710631170027)\n Alfian Yunianto Suseno (1710631170045)\nAlifa Puteri Bilqis S (1710631170047)\nAmelia Isnanda(1710631170049)\n Mohammad Esa S (1710631170137)"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/cerpen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"></TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
